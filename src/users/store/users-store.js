@@ -1,3 +1,5 @@
+import { loadUsers } from "../use-cases/load-users-by-page";
+
 // Crear un estado
 const state = {
     currentPage: 0,
@@ -6,7 +8,7 @@ const state = {
 
 // Crear metodos con nombres autoexplicativos
 const loadNextPage = async() => {
-    throw new Error('Not implemented');
+    await loadUsers(state.currentPage + 1)
 }
 
 const loadPreviousPage = async() => {
