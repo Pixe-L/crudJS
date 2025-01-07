@@ -8,14 +8,23 @@ const state = {
 
 // Crear metodos con nombres autoexplicativos
 const loadNextPage = async() => {
-    const users = await loadUsers(state.currentPage + 1)
+    const users = await loadUsers(state.currentPage + 1);
     if (users.length === 0) return;
-    state.currentPage += 1;
+    if (state.currentPage > 4) {
+        alert('No existe la página 6');
+    }
+    if (state.currentPage < 5) {
+        state.currentPage += 1;
+    }
     state.users = users;
 }
 
 const loadPreviousPage = async() => {
-    throw new Error('Not implemented');
+    const users = await loadUsers(state.currentPage - 1);
+    if (users.length === 1) return;
+
+    state.currentPage -= 1;
+    state.users = users;
 }
 
 //TODO: implementar
