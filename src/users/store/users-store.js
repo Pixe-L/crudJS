@@ -33,9 +33,17 @@ export default {
     onUserChange,
     reloadPage,
 
+    /**
+     * 
+     * @returns {User[]}
+     */
     // Tener acceso desde fuera del store para saber la página actual y el user
     // Objetos por referencia
     getUsers: () => [...state.users],
+    /**
+     * 
+     * @returns {Number}
+     */
     // Valores primitivos pasan por valor
     getCurrentPage: () => state.currentPage,
 }
