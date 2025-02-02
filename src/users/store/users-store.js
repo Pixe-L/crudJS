@@ -10,12 +10,10 @@ const state = {
 const loadNextPage = async() => {
     const users = await loadUsers(state.currentPage + 1);
     if (users.length === 0) return;
-    if (state.currentPage > 4) {
-        alert('No existe la página 6');
-    }
-    if (state.currentPage < 5) {
-        state.currentPage += 1;
-    }
+    const exist = state.users.map(user => user.id);
+    const newUsers = users.filter(user => !exist.includes(user.id));
+    if (newUsers.length === 0) return;
+    state.currentPage += 1;
     state.users = users;
 }
 
