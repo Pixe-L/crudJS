@@ -13,3 +13,7 @@ export class User {
 			this.gender = gender;
     }
 }
+
+export default {
+    User
+}

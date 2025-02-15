@@ -8,8 +8,8 @@ import { User } from "../models/user"
 export const saveUser = async(userLike) => {
 
     const user = new User(userLike);
-    if (!user.firstName || !user.lastName)
-        throw 'First name & last name are required';
+    // if (!user.firstName || !user.lastName)
+    //     throw 'First name & last name are required';
     const userToSave = userModelToLocalhost(user);
     
     if (user.id) {
